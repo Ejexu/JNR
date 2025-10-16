@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JNR Business — Professionele lokale service in Giessenburg | 24/7 bereikbaar</title>
+  <meta name="description" content="JNR Business uit Giessenburg. Betrouwbare lokale service, 24/7 bereikbaar. Bel, mail of gebruik het formulier. Snel geholpen door Justin, Nout en Ruben." />
+  <meta property="og:title" content="JNR Business — Lokale service, 24/7" />
+  <meta property="og:description" content="Direct contact en transparante service. Team: Justin, Nout en Ruben." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="/" />
+  <style>
+    /* ——— Strakke, snelle, toegankelijke one‑pager ——— */
+    :root {
+      --bg: #ffffff;            /* achtergrond */
+      --ink: #0b1324;           /* tekst */
+      --muted: #5b6473;         /* secundaire tekst */
+      --line: #e6ebf2;          /* randen */
+      --brand: #0ea5e9;         /* primair */
+      --brand-ink: #0b1324;     /* donkere tekst */
+      --accent: #0284c7;        /* hover */
+      --radius: 14px;
+      --shadow: 0 10px 32px rgba(2, 8, 23, .06);
+    }
+    html, body { height: 100%; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Layout */
+    .container { max-width: 78rem; margin: 0 auto; padding: 0 1.25rem; }
+    .section { padding: 4rem 0; }
+    .section--tight { padding: 2rem 0; }
+
+    /* Header */
+    header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(10px) saturate(1.2); background: color-mix(in oklab, white 86%, transparent); border-bottom: 1px solid var(--line); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 64px; }
+    .brand { display: flex; align-items: center; gap: .8rem; }
+    .logo { width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(135deg, var(--brand), var(--accent)); display: grid; place-items: center; color: #fff; font-weight: 800; letter-spacing: .5px; box-shadow: 0 6px 22px rgba(14,165,233,.25); }
+    .brand h1 { margin: 0; font-size: 1.05rem; letter-spacing: .2px; }
+    .nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; }
+    .nav a { color: var(--brand-ink); font-weight: 600; padding: .5rem .7rem; border-radius: 8px; }
+    .nav a:focus, .nav a:hover { background: #f6fafc; }
+
+    /* Hero */
+    .hero { display: grid; gap: 1.5rem; grid-template-columns: 1fr; align-items: center; }
+    @media (min-width: 900px) { .hero { grid-template-columns: 1.2fr .8fr; gap: 2rem; } }
+    .eyebrow { color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: .8rem; }
+    .title { font-size: clamp(1.8rem, 1.2rem + 2vw, 3rem); line-height: 1.15; margin: .2em 0 .3em; }
+    .lead { font-size: clamp(1rem, .95rem + .4vw, 1.15rem); color: var(--muted); }
+
+    .card { border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); background: #fff; }
+    .card--pad { padding: 1.25rem; }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .9rem 1rem; border-radius: 12px; font-weight: 700; text-decoration: none; border: 1px solid var(--line); }
+    .btn--primary { background: var(--brand); color: #fff; border-color: transparent; }
+    .btn--primary:hover, .btn--primary:focus { background: var(--accent); }
+    .btn--ghost { background: #fff; color: var(--brand-ink); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+
+    /* Feature grid */
+    .grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+    @media (min-width: 900px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+    .feature { padding: 1rem; border: 1px solid var(--line); border-radius: var(--radius); }
+    .feature h3 { margin: .4rem 0 .2rem; font-size: 1.05rem; }
+    .muted { color: var(--muted); }
+
+    /* About */
+    .two { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    @media (min-width: 900px) { .two { grid-template-columns: 1.1fr .9fr; } }
+
+    /* Team */
+    .team { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 800px) { .team { grid-template-columns: repeat(3, 1fr); } }
+    .person { border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem; display: grid; gap: .5rem; }
+    .badge { display: inline-block; font-size: .75rem; background: #f6fafc; border: 1px solid var(--line); color: var(--muted); padding: .25rem .5rem; border-radius: 999px; }
+
+    /* Contact */
+    form { display: grid; gap: .7rem; }
+    input, textarea { width: 100%; padding: .9rem; border: 1px solid var(--line); border-radius: 12px; font: inherit; }
+    textarea { min-height: 130px; }
+    .contact-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+    @media (min-width: 900px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--line); }
+    .small { font-size: .92rem; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "JNR Business",
+    "founder": [
+      {"@type":"Person","name":"Justin"},
+      {"@type":"Person","name":"Nout"},
+      {"@type":"Person","name":"Ruben"}
+    ],
+    "address": {"@type": "PostalAddress", "addressLocality": "Giessenburg", "addressCountry": "NL"},
+    "telephone": "+31-6-3087267",
+    "email": "mailto:jnrbusiness@gmail.com",
+    "openingHours": "Mo-Su 00:00-23:59"
+  }
+  </script>
+</head>
+<body>
+  <!-- Header / Navigatie -->
+  <header>
+    <div class="container nav" role="navigation" aria-label="Hoofdmenu">
+      <a class="brand" href="#top" aria-label="JNR Business start">
+        <div class="logo" aria-hidden="true">JNR</div>
+        <h1>JNR Business</h1>
+      </a>
+      <ul>
+        <li><a href="#diensten">Diensten</a></li>
+        <li><a href="#over">Over ons</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="section">
+      <div class="container hero">
+        <div>
+          <div class="eyebrow">Lokale service · 24/7 bereikbaar</div>
+          <h2 class="title">Snel en professioneel geholpen in <span class="muted">Giessenburg</span></h2>
+          <p class="lead">Wij zijn JNR Business. Betrouwbare hulp, korte lijnen en duidelijke communicatie. Bel direct of stuur een bericht — we reageren doorgaans binnen enkele minuten.</p>
+          <div class="btn-row" role="group" aria-label="Primaire acties">
+            <a class="btn btn--primary" href="tel:063087267" aria-label="Bel JNR Business op 063087267">📞 Bel direct</a>
+            <a class="btn btn--ghost" href="mailto:jnrbusiness@gmail.com?subject=Contact%20via%20website" aria-label="E‑mail naar JNR Business">✉️ E‑mail</a>
+            <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query=Giessenburg" target="_blank" rel="noopener" aria-label="Open locatie Giessenburg op Google Maps">📍 Route</a>
+          </div>
+        </div>
+        <aside class="card card--pad">
+          <strong>Snelle feiten</strong>
+          <ul class="muted" style="list-style:none; padding:0; margin:.5rem 0 0; display:grid; gap:.35rem">
+            <li>⏰ 24/7 beschikbaar — ook in het weekend</li>
+            <li>📍 Standplaats: Giessenburg en omgeving</li>
+            <li>🤝 Afspraak = afspraak, transparante communicatie</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Diensten / USP's -->
+    <section id="diensten" class="section section--tight">
+      <div class="container grid">
+        <div class="feature">
+          <div aria-hidden="true">⚡</div>
+          <h3>Snel geholpen</h3>
+          <p class="muted">We reageren snel en plannen direct. Geen wachtrijen, wel duidelijkheid.</p>
+        </div>
+        <div class="feature">
+          <div aria-hidden="true">📞</div>
+          <h3>Makkelijk bereikbaar</h3>
+          <p class="muted">Bel, mail of vul het formulier in — wat jij het fijnst vindt.</p>
+        </div>
+        <div class="feature">
+          <div aria-hidden="true">✅</div>
+          <h3>Betrouwbaar & lokaal</h3>
+          <p class="muted">We zijn van hier. Afspraak = afspraak en heldere tarieven.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Over ons -->
+    <section id="over" class="section">
+      <div class="container two">
+        <div>
+          <h2>Over JNR Business</h2>
+          <p>JNR Business is opgericht door drie vakmensen: <strong>Justin</strong>, <strong>Nout</strong> en <strong>Ruben</strong>. Met een hands‑on mentaliteit en focus op kwaliteit helpen we particulieren en bedrijven in Giessenburg en de regio. We houden van korte lijnen en duidelijke afspraken. Daardoor weet je altijd waar je aan toe bent.</p>
+          <p>Onze kernwaarden: betrouwbaarheid, snelheid en heldere communicatie. Dat merk je in alles: van het eerste contact tot de nazorg.</p>
+        </div>
+        <aside class="card card--pad">
+          <h3>Praktische informatie</h3>
+          <ul style="list-style:none; padding:0; margin:0; display:grid; gap:.6rem">
+            <li>⏰ <strong>Openingstijden:</strong> 24/7 (altijd bereikbaar)</li>
+            <li>📍 <strong>Adres:</strong> Giessenburg, Nederland — <a href="https://www.google.com/maps/search/?api=1&query=Giessenburg" target="_blank" rel="noopener">route</a></li>
+            <li>📞 <strong>Telefoon:</strong> <a href="tel:063087267">063087267</a></li>
+            <li>✉️ <strong>E‑mail:</strong> <a href="mailto:jnrbusiness@gmail.com">jnrbusiness@gmail.com</a></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" class="section section--tight">
+      <div class="container">
+        <h2>Maak kennis met ons team</h2>
+        <div class="team">
+          <article class="person" aria-labelledby="p-justin">
+            <div class="badge">Co‑founder</div>
+            <h3 id="p-justin">Justin</h3>
+            <p class="muted">Resultaatgericht en precies. Het eerste aanspreekpunt voor nieuwe aanvragen.</p>
+          </article>
+          <article class="person" aria-labelledby="p-nout">
+            <div class="badge">Co‑founder</div>
+            <h3 id="p-nout">Nout</h3>
+            <p class="muted">Denkt mee, plant slim en zorgt dat afspraken strak worden nagekomen.</p>
+          </article>
+          <article class="person" aria-labelledby="p-ruben">
+            <div class="badge">Co‑founder</div>
+            <h3 id="p-ruben">Ruben</h3>
+            <p class="muted">Hands‑on en oplossingsgericht. Zet nét dat stapje extra voor iedere klant.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container contact-grid">
+        <div class="card card--pad">
+          <h2>Stuur ons een bericht</h2>
+          <!-- Lichtgewicht mailto-formulier; kan eenvoudig worden vervangen door Formspree of servermail -->
+          <form action="mailto:jnrbusiness@gmail.com" method="post" enctype="text/plain">
+            <label class="sr-only" for="naam">Naam</label>
+            <input id="naam" name="Naam" type="text" placeholder="Naam" autocomplete="name" required />
+
+            <label class="sr-only" for="email">E‑mail</label>
+            <input id="email" name="E-mail" type="email" placeholder="E‑mail" autocomplete="email" required />
+
+            <label class="sr-only" for="tel">Telefoon</label>
+            <input id="tel" name="Telefoon" type="tel" placeholder="Telefoon (optioneel)" autocomplete="tel" />
+
+            <label class="sr-only" for="msg">Bericht</label>
+            <textarea id="msg" name="Bericht" placeholder="Waarmee kunnen we helpen?" required></textarea>
+
+            <button class="btn btn--primary" type="submit">Verstuur</button>
+          </form>
+          <p class="small muted" style="margin:.5rem 0 0">Tip: geen e‑mailprogramma ingesteld? Gebruik dan <a href="mailto:jnrbusiness@gmail.com?subject=Contact%20via%20website">deze link</a> of bel ons.</p>
+        </div>
+        <aside class="card card--pad">
+          <h2>Direct contact</h2>
+          <p>We reageren snel — ook ’s avonds en in het weekend.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="tel:063087267">📞 Bel 063087267</a>
+            <a class="btn btn--ghost" href="mailto:jnrbusiness@gmail.com?subject=Contact%20via%20website">✉️ Stuur e‑mail</a>
+            <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query=Giessenburg" target="_blank" rel="noopener">📍 Route</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section section--tight">
+    <div class="container">
+      <div class="small muted">© <span id="year"></span> JNR Business · Professionele lokale service — Giessenburg</div>
+    </div>
+  </footer>
+
+  <script>
+    // Dynamisch jaar in de footer.
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
